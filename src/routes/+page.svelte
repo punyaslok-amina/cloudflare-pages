@@ -13,7 +13,7 @@
 <section>
 	<h1>
 		<span class="welcome">
-	{data.greeting}
+	{data.greeting}-v1
 			<picture>
 				<source srcset={welcome} type="image/webp" />
 				<img src={welcomeFallback} alt="Welcome" />
