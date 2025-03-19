@@ -1,11 +1,11 @@
 import { building } from '$app/environment';
-import { LANGUAGE } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private';
 var greetings = {
 	'lang': "bonjour-de",
 };
 if (!building) {
 	greetings = {
-	'lang': LANGUAGE,
+	'lang': env.LANGUAGE,
 };
 }
 export function load({ params }) {
