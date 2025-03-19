@@ -1,11 +1,15 @@
-const greetings = {
-	en: 'hello!',
-	de: 'hallo!',
-	fr: 'bonjour!'
+import { building } from '$app/environment';
+import { env } from '$env/dynamic/private';
+var greetings = {
+	'lang': "bonjour-de",
 };
-
+if (!building) {
+	greetings = {
+	'lang': env.LANGUAGE,
+};
+}
 export function load({ params }) {
 	return {
-		greeting: greetings[params.lang ?? 'fr']
+		greeting: greetings[params.lang ?? 'lang']
 	};
 }
