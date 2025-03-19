@@ -1,15 +1,13 @@
 import { building } from '$app/environment';
-import { env } from '$env/dynamic/private';
-var greetings = {
-	'lang': "bonjouur",
-};
-if (!building) {
-	greetings = {
-	'lang': env.LANGUAGE,
-};
+import { greetings } from "$lib/server/data.js";
+export async function load({ params }) {
+    var message = {
+        'lang': "default",
 }
-export function load({ params }) {
+	if (!building) {
+        message = await greetings()
+  }
 	return {
-		greeting: greetings[params.lang ?? 'lang']
+		greeting: message.lang
 	};
 }
