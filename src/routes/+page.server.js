@@ -1,6 +1,6 @@
 import { building } from '$app/environment';
 import { env } from '$env/dynamic/private';
-var greetings = {
+const greetings = {
 	'lang': env.LANGUAGE,
 };
 export function load({ params }) {
