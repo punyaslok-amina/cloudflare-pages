@@ -1,4 +1,4 @@
 # Top-level configuration
-name = "cloud-flare-pages"
+name = "cloudflare-pages"
 main = ".svelte-kit/cloudflare/_worker.js"
 compatibility_date = "2025-03-19"
